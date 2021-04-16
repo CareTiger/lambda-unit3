@@ -110,10 +110,11 @@ Using `sqlite3` in `northwind.py`, answer the following:
 Answer the following questions, baseline ~3-5 sentences each, as if they were interview screening questions (a form you fill when applying for a job):
 
 - In the Northwind database, what is the type of relationship between the `Employee` and `Territory` tables?
-ANSWER: THE RELATIONSHIP IS A 1-IS-TO-MANY RELATIONSHIPY. THAT IS AN EMPLOYEE CAN HAVE MANY TERRITORIES
+ANSWER: THE RELATIONSHIP IS A 1-IS-TO-MANY RELATIONSHIPY. THAT IS AN EMPLOYEE CAN HAVE MANY TERRITORIES. THE EMPLOYEE AND TERRITORY TABLES ARE CONNECTED THROUGH THE EMPLOYEETERRITORIES TABLE WHERE EACH EMPLOYEE ID IS CONNECTED TO MULTIPLE TERRITORY IDS. 
 - What is a situation where a document store (like MongoDB) is appropriate, and what is a situation where it is not appropriate?
-A DOCUMENT STORE LIKE 
+ANSWER: A DOCUMENT STORE LIKE MongoDB IS USED FOR BIG DATA. IT IS NOT A RELATIONAL DATABASE AND SHOULD NOT BE USED WHEN THERE ARE A LOT OF JOINS THAT HAVE TO BE PERFORMED TO RETRIEVE DATA. DOCUMENT STORES ARE EASY TO WRITE TO AND HARD TO RETRIEVE FROM COMPARED TO RDBMS BECAUSE THE CONCEPT OF JOINS IS NOT EASILY IMPLEMENTED IN DOCUMENT STORES. 
 - What is "NewSQL", and what is it trying to achieve?
+ANSWER: NewSQL IS THIS NEW TYPE OF DATABASE MANAGEMENT SYSTEM THAT IS TRYING TO BRING TOGETHER THE BEST OF RELATIONAL DATABASES AND NO-SQL DATABASES. COMPANIES LIKE COCKROACH DB ARE TRYING TO BRING THESE NEWSQL DATABASES AND MAKE THEM MAINSTREAM. 
 
 ### Part 5 - Turn it in!
 Provide all the files you wrote (`demo_data.py`, `northwind.py`, `demo_data.sqlite3`), as well as this file with your answers to part 4, directly to your TL. You're also encouraged to include the output from your queries as docstring comments, to facilitate grading and feedback. Thanks for your hard work!

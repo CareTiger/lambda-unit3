@@ -5,10 +5,29 @@ expensive_items = """
     ORDER BY UnitPrice DESC
     LIMIT 10
 """
+""" 
+--- OUTPUT OF ABOVE QUERY ---
+Côte de Blaye
+Thüringer Rostbratwurst
+Mishi Kobe Niku
+Sir Rodney's Marmalade
+Carnarvon Tigers
+Raclette Courdavault
+Manjimup Dried Apples
+Tarte au sucre
+Ipoh Coffee
+Rössle Sauerkraut
+"""
 
 avg_hire_age = """
     SELECT  AVG (HireDate-BirthDate) FROM Employee
 """
+""" 
+--- OUTPUT OF ABOVE QUERY ---
+37.2222222222222
+"""
+
+
 
 ten_most_expensive = """
     SELECT  P.ProductName, S.CompanyName
@@ -18,6 +37,20 @@ ten_most_expensive = """
     ORDER BY P.UnitPrice DESC
     LIMIT 10
 """
+""" 
+--- OUTPUT OF ABOVE QUERY ---
+Côte de Blaye	Aux joyeux ecclésiastiques
+Thüringer Rostbratwurst	Plutzer Lebensmittelgroßmärkte AG
+Mishi Kobe Niku	Tokyo Traders
+Sir Rodney's Marmalade	Specialty Biscuits, Ltd.
+Carnarvon Tigers	Pavlova, Ltd.
+Raclette Courdavault	Gai pâturage
+Manjimup Dried Apples	G'day, Mate
+Tarte au sucre	Forêts d'érables
+Ipoh Coffee	Leka Trading
+Rössle Sauerkraut	Plutzer Lebensmittelgroßmärkte AG
+"""
+
 
 largest_category = """
     SELECT CategoryName
@@ -29,6 +62,10 @@ largest_category = """
 	LIMIT 1
 """
 
+""" 
+--- OUTPUT OF ABOVE QUERY ---
+Confections
+"""
 
 def sqlite_connect(db_path="northwind_small.sqlite3"):
     """Create SQLite connection and cursor object"""
