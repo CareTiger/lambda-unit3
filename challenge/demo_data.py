@@ -18,19 +18,20 @@ DEMO_DATA_INSERT_DATA = """
     ('f', 8, 7);
 """
 
-DEMO_DATA_LENGTH = """
+row_count = """
     SELECT COUNT(*) FROM demo
 """
 
-DEMO_DATA_X_Y_ATLEAST_5 = """
+xy_at_least_5 = """
     SELECT COUNT(*) FROM demo
     WHERE x >= 5
     AND y>=5
 """
 
-DEMO_DATA_DISTINCT_Y = """
+unique_y = """
     SELECT COUNT(DISTINCT y) FROM demo
 """
+
 
 def sqlite_connect(db_path="demo_data.sqlite3"):
     """Create SQLite connection and cursor object"""
@@ -49,19 +50,20 @@ if __name__ == "__main__":
 
     # Running queries on the demo table
     demo_conn, demo_curs = sqlite_connect()
-    row_count = demo_conn.execute(DEMO_DATA_LENGTH).fetchall()[0][0]
-    xy_at_least_5 = demo_conn.execute(DEMO_DATA_X_Y_ATLEAST_5).fetchall()[0][0]
-    unique_y = demo_conn.execute(DEMO_DATA_DISTINCT_Y).fetchall()[0][0]
+    row_count_output = demo_conn.execute(row_count).fetchall()[0][0]
+    xy_at_least_5_output = demo_conn.execute(xy_at_least_5).fetchall()[0][0]
+    unique_y_output = demo_conn.execute(unique_y).fetchall()[0][0]
 
     print("#######################################################")
     print("We have {} rows in the demo table"
-        .format(row_count))
+            .format(row_count_output))
     print("There are {} rows in the demo table where both x and y are at least 5"
-        .format(xy_at_least_5))
+            .format(xy_at_least_5_output))
     print("There are {} distinct values of y in the demo table"
-        .format(unique_y))
+            .format(unique_y_output))
     print("#######################################################")
 
     demo_conn.commit()
     demo_conn.close()
     print("Closed the cursor and connection...")
+
