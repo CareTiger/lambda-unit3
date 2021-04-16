@@ -110,7 +110,9 @@ Using `sqlite3` in `northwind.py`, answer the following:
 Answer the following questions, baseline ~3-5 sentences each, as if they were interview screening questions (a form you fill when applying for a job):
 
 - In the Northwind database, what is the type of relationship between the `Employee` and `Territory` tables?
+ANSWER: THE RELATIONSHIP IS A 1-IS-TO-MANY RELATIONSHIPY. THAT IS AN EMPLOYEE CAN HAVE MANY TERRITORIES
 - What is a situation where a document store (like MongoDB) is appropriate, and what is a situation where it is not appropriate?
+A DOCUMENT STORE LIKE 
 - What is "NewSQL", and what is it trying to achieve?
 
 ### Part 5 - Turn it in!
